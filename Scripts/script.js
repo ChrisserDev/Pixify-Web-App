@@ -54,7 +54,6 @@ const imageSets = [
 //DARK/LIGHT MODE
 
 const body = document.querySelector('body')
-
 const toggle = document.getElementById('toggle');
 toggle.onclick = function () {
    toggle.classList.toggle('active');
@@ -64,15 +63,16 @@ toggle.onclick = function () {
 //DISPLAYING THE IMAGES
 
 const displayCards=(list)=>{
-   const cardsContainer = document.getElementById("cards-container")  
+  const cardsContainer = document.getElementById("cards-container");
    const allCards = list.map(item=>{
-   return `<div class="cards">
+   return `<a class="cards" href="see-more.html?id=${item.id}">
              <img src=${item.images} alt=${item.name} class="cards-image" />
              <div class="cards-info">
-               <p>${item.name}</p>
-               <p class="item-title">${item.title}</p>
-             </div>
-           </div>`;
+                <p>${item.name}</p>
+                <p class="item-title">${item.title}</p>
+                </div>
+                <span id="see-more-btn">see more</span>
+           </a>`;
      })
      // console.log(allMeals) <-- Shows all of the new meal divs
      // console.log(allMeals.join("")) <-- Show all of the new meal divs joined into a string
@@ -82,3 +82,51 @@ const displayCards=(list)=>{
  window.onload = function() {
    displayCards(imageSets);
  };
+
+
+//HAMBURGER-MENU
+
+const menuIcon = document.querySelector("#menu-icon");
+const openMenu = () => {
+  const btnContainer = document.querySelector(".right-header-btns");
+  btnContainer.classList.toggle("mobile-menu");
+}
+
+menuIcon.onclick = openMenu;
+
+
+//ADD NEW IMAGES
+
+// const submitBtn = document.querySelector("#submit-btn3");
+
+// submitBtn.addEventListener("click", (e) => {
+//     //PREVENT THE FORM'S DEFAULT FUNCTION
+//     e.preventDefault();
+
+//     //GET THE VALUES FROM THE FORM
+
+//     const name = document.querySelector('input [name="name"]').value;
+//     const title = document.querySelector('input [name="title"]').value;
+//     const imageURL1 = document.querySelector('input [name="imageURL1"]').value;
+
+//     const newImage = document.createElement("div");
+//     newImage.innerHTML = `<img src=${imageURL1} alt= ${name} class = "card-image" />
+//     <div class="card-info">
+//     <p>${name}</p>
+//     <p>${title}</p>
+//     </div>`;
+
+//     const cardContainer = document.querySelector(".cards-container");
+//     cardContainer.insertBefore(newImage, cardContainer.firstChild);
+
+//     //RESET VALUES
+
+//     document.querySelector('input [name="name"]').value = "";
+//     document.querySelector('input [name="title"]').value = "";
+//     document.querySelectorAll('input [name="imageURL"]').value = "";
+   
+// });
+
+
+
+

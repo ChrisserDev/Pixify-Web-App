@@ -84,10 +84,12 @@ header a {
     color: #FFFFFF;
 }
 
+#icon-container{
+    display: none;
+}
+
 #logo-text {
     color: #7BFFE9;
-    font-style: normal;
-    font-weight: 400;
     font-size: 36px;
     line-height: 44px;
 }
@@ -99,7 +101,7 @@ header a {
     align-items: center;
 }
 
-.right-header-links2 {
+.right-header-btns {
     display: flex;
     width: 25%;
     justify-content: space-evenly;
@@ -145,7 +147,7 @@ header a {
     cursor: pointer;
 }
 
-.main-submission-page {
+main {
     display: flex;
     justify-content: space-between;
     padding: 50px;
@@ -155,52 +157,72 @@ header a {
 #cards-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
-    padding:0 20px;
+    gap: 40px;
+    padding: 0 20px;
+    /* width: 70%; */
     /* min-height: 100vh; */
-    width:70%;
+}
+
+/* .submissions {
+    width: 70%;
+} */
+
+.submissions {
+    width: 70%;
+}
+
+.submissions h1 {
+    text-align: center;
+    margin-bottom: 5%;
 }
 
 .cards-image {
     border-radius: 8px;
     width: 100%;
-    /* height: 193px; */
 }
 
 .cards-info{
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     color:white;
     background-color: rgb(53, 50, 50);
-    height:50px;
 }
 
-.cards{
-    /* display: flex; */
+#see-more-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    font-size: 10px;
+}
+
+.input-container {
+    margin-top: 20px;
     /* width: 100%; */
 }
 
-.input-container input {
-    border-radius: 8px;
-    padding: 12px 150px 12px 10px;
-    border: none;
-    margin-top: 20px;
-}
-
-.form-container{
+#form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #2A3B49;
     border-radius: 8px;
-    padding: 25px 60px 40px 60px;
-}
-
-#form-heading {
+    /* padding: 25px 60px 40px 60px; */
+    padding: 20px;
+    width: 30%;
+    height: 80%;
+    margin-top: 6.1%;
     color: white;
 }
+
+#form-container input{
+    border-radius: 8px;
+    border: 1px solid gray;
+    padding: 8px 16px;
+    /* margin-top: 20px; */
+}
+
 
 #submit-btn3{
     border: 2px solid #7BFFE9;
@@ -267,3 +289,66 @@ header a {
     cursor: pointer;
 }
 
+@media (max-width: 768px){
+
+    #logo-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .right-header-btns{
+        display: none;
+    }
+
+    #icon-container{
+        display: block;
+        margin-top: 10px;
+    }
+
+    #menu-icon {
+        font-size: 36px;
+        color: white;
+        cursor: pointer;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    #form-container{
+        width: 100%;
+        align-self: center;
+
+    }
+
+    .input-container input{
+        width: 100%;
+    }
+
+    .mobile-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        padding: 0 20px;
+        height: 150px;
+        width: 100%;
+        border: 1px solid red;
+    }
+
+    .mobile-menu button {
+
+        width: 50%;
+        margin: 5px 0;
+
+    }
+
+
+    .submissions{
+        margin-top: 40px;
+    }
+
+    #cards-container{
+        width: 100%;
+    }
+}

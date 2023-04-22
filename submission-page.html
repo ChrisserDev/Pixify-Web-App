@@ -7,14 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Pixify</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="./Scripts/script.js" defer></script>
+    <title>Submissions Page</title>
 </head>
 <body>
     <header>
+        <div id="icon-container">
+            <p id="menu-icon" >&#x2630;</p>
+        </div>
         <a href="index.html" id="logo-text">PIXIFY</a>
-        <div class="right-header-links2">
+        <div class="right-header-btns">
             <a href="submission-page.html">2023 Submissions</a>
             <a href="about-us.html">About</a>
             <div id="toggle">
@@ -22,42 +25,42 @@
             </div>
         </div>
         </header>
-     <main class="main-submission-page">
-        <!-- <div class="left-side"> -->
-        <div id="cards-container">
+     <main>
+        <div class="submissions">
             <h1>2023 SUBMISSIONS</h1>
+            <div id="cards-container"></div>
         </div>
-        <div class="form-container">
-              <h2 id="form-heading">SUBMIT YOUR WORK</h2>
+        <div id="form-container">
+              <h2>SUBMIT YOUR WORK</h2>
             <div class="input-container">
-                <label for="name"></label>
+                <!-- <label for="name"></label> -->
                 <input type="text" name="name" placeholder="Your Name" required>
             </div>
             <div class="input-container">
-                <label for="title"></label>
+                <!-- <label for="title"></label> -->
                 <input type="text" name="title" placeholder="Title of Your Entry" required>
             </div>
             <div class="input-container">
-                <label for="imageURL"></label>
-                <input type="text" name="imageURL" placeholder=" Image URL One" required>
+                <!-- <label for="imageURL"></label> -->
+                <input type="text" name="imageURL1" placeholder=" Image URL One" required>
             </div>
             <div class="input-container">
-                <label for="imageURL"></label>
+                <!-- <label for="imageURL"></label> -->
                 <input type="text" name="imageURL" placeholder=" Image URL Two" required>
             </div>
             <div class="input-container">
-                <label for="imageURL"></label>
+                <!-- <label for="imageURL"></label> -->
                 <input type="text" name="imageURL" placeholder=" Image URL Three" required>
             </div>
             <div class="input-container">
-                <label for="imageURL"></label>
+                <!-- <label for="imageURL"></label> -->
                 <input type="text" name="imageURL" placeholder=" Image URL Four" required>
             </div>
             <div class="input-container">
-                <label for="imageURL"></label>
+                <!-- <label for="imageURL"></label> -->
                 <input type="text" name="imageURL" placeholder=" Image URL Five" required>
             </div>
-            <button id="submit-btn3">SUBMIT</button>
+            <button type="submit" id="submit-btn3">SUBMIT</button>
         </div>
     </main>
 </body>
