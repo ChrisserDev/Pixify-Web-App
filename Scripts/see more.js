@@ -47,7 +47,76 @@ const imageSets = [
         'https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
       ]
     }
- 
+    
   ];
 
+  //DARK/LIGHT MODE
   
+  const body = document.querySelector('body')
+  const toggle = document.getElementById('toggle');
+  toggle.onclick = function () {
+   toggle.classList.toggle('active');
+   body.classList.toggle('active');
+  }
+  
+  let currentId;
+  let currentImage;
+  
+  window.onload = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    currentId = urlParams.get("id");
+    
+    currentImage = imageSets.filter(item => item.id == currentId)[0];
+    console.log(currentImage);
+    displayImage(crntImage);
+  }
+
+  const firstImage = 0;
+  const lastImage = imageSets[0].images.length -1;
+  let crntImage = 0;
+  
+ const nextBtn =  document.getElementById("next-btn");
+ nextBtn.addEventListener("click", () => {
+   //Get image tag
+  crntImage++;
+  if (crntImage  >= lastImage){
+     crntImage = 4;
+  }
+  displayImage(crntImage);
+});
+
+const prevBtn = document.getElementById('prv-btn')
+prevBtn.addEventListener("click", () => {
+  crntImage--;
+  if (crntImage  <= firstImage){
+      crntImage = 0;
+  }
+  displayImage(crntImage);
+
+});
+
+function displayImage(imageIndex) {
+  const image = `<div class="current-image">
+  <div class="current-image-info">
+     <h1>${currentImage.title}</h1>
+     <h2 class="current-image-name">${currentImage.name}</h2>
+     </div>
+     <img src=${currentImage.images[imageIndex]} alt=${currentImage.name} class="current-new-image" />
+     <p id="images-number">${imageIndex + 1} of 5</p>
+     </div>`;
+ 
+   const imageContainer = document.querySelector(".imageHolder");
+   imageContainer.innerHTML = image;
+}
+
+//   ///HAMBURGER MENU (Code from JS Events 1)
+//     const menuIcon=document.querySelector("#menu-icon")
+//     const openMenu=()=>{
+//     // alert('opened')
+//     const btnContainer = document.querySelector(".buttons-container") 
+//     btnContainer.classList.toggle("mobile-menu")
+// }
+
+// menuIcon.onclick = openMenu;
+
+
