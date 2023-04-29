@@ -53,14 +53,24 @@ const imageSets = [
 
 //DARK/LIGHT MODE
 
-const body = document.querySelector('body')
-const toggle = document.getElementById('toggle');
-toggle.onclick = function () {
-   toggle.classList.toggle('active');
-   body.classList.toggle('active');
+let btn = document.getElementById("btn");
+let btnText = document.getElementById("btnText");
+let btnIcon = document.getElementById("btnIcon");
+
+btn.onclick = function(){
+  document.body.classList.toggle("dark-theme");
+
+  if(document.body.classList.contains("dark-theme")){
+    btnIcon.src = "/assets/sun.png";
+    btnText.innerHTML = "Light";
+  } else{
+    btnIcon.src = "/assets/moon.png";
+    btnText.innerHTML = "Dark";
+  }
+
 }
 
-//DISPLAYING THE IMAGES
+// DISPLAYING THE IMAGES
 
 const displayCards=(list)=>{
   const cardsContainer = document.getElementById("cards-container");
@@ -74,8 +84,7 @@ const displayCards=(list)=>{
                 <span id="see-more-btn">see more</span>
            </a>`;
      })
-     // console.log(allMeals) <-- Shows all of the new meal divs
-     // console.log(allMeals.join("")) <-- Show all of the new meal divs joined into a string
+
     cardsContainer.innerHTML= allCards.join("");
  }
  

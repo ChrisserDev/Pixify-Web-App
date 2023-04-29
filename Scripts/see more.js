@@ -52,15 +52,28 @@ const imageSets = [
 
   //DARK/LIGHT MODE
   
-  const body = document.querySelector('body')
-  const toggle = document.getElementById('toggle');
-  toggle.onclick = function () {
-   toggle.classList.toggle('active');
-   body.classList.toggle('active');
+  let btn = document.getElementById("btn");
+  let btnText = document.getElementById("btnText");
+  let btnIcon = document.getElementById("btnIcon");
+  
+  btn.onclick = function(){
+    document.body.classList.toggle("dark-theme");
+  
+    if(document.body.classList.contains("dark-theme")){
+      btnIcon.src = "/assets/sun.png";
+      btnText.innerHTML = "Light";
+    } else{
+      btnIcon.src = "/assets/moon.png";
+      btnText.innerHTML = "Dark";
+    }
+  
   }
   
+  //FILTER THROUGH THE ARRAY
+
   let currentId;
   let currentImage;
+
   
   window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
@@ -71,29 +84,11 @@ const imageSets = [
     displayImage(crntImage);
   }
 
+  //PREVIOUS/NEXT BUTTONS FUNCTIONS
+
   const firstImage = 0;
   const lastImage = imageSets[0].images.length -1;
   let crntImage = 0;
-  
- const nextBtn =  document.getElementById("next-btn");
- nextBtn.addEventListener("click", () => {
-   //Get image tag
-  crntImage++;
-  if (crntImage  >= lastImage){
-     crntImage = 4;
-  }
-  displayImage(crntImage);
-});
-
-const prevBtn = document.getElementById('prv-btn')
-prevBtn.addEventListener("click", () => {
-  crntImage--;
-  if (crntImage  <= firstImage){
-      crntImage = 0;
-  }
-  displayImage(crntImage);
-
-});
 
 function displayImage(imageIndex) {
   const image = `<div class="current-image">
@@ -109,14 +104,34 @@ function displayImage(imageIndex) {
    imageContainer.innerHTML = image;
 }
 
-//   ///HAMBURGER MENU (Code from JS Events 1)
-//     const menuIcon=document.querySelector("#menu-icon")
-//     const openMenu=()=>{
-//     // alert('opened')
-//     const btnContainer = document.querySelector(".buttons-container") 
-//     btnContainer.classList.toggle("mobile-menu")
-// }
+  const nextBtn =  document.getElementById("next-btn");
+  nextBtn.addEventListener("click", () => {
+    crntImage++;
+    if (crntImage  >= lastImage){
+      crntImage = 4;
+}
+    displayImage(crntImage);
+});
 
-// menuIcon.onclick = openMenu;
+  const prevBtn = document.getElementById('prv-btn')
+  prevBtn.addEventListener("click", () => {
+    crntImage--;
+    if (crntImage  <= firstImage){
+      crntImage = 0;
+}
+  displayImage(crntImage);
+
+});
+
+  ///HAMBURGER MENU
+
+    const menuIcon=document.querySelector("#menu-icon")
+    const openMenu=()=>{
+    // alert('opened')
+    const btnContainer = document.querySelector(".buttons-container") 
+    btnContainer.classList.toggle("mobile-menu")
+}
+
+menuIcon.onclick = openMenu;
 
 
