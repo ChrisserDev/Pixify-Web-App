@@ -123,13 +123,13 @@ function displayImage(imageIndex) {
 
 });
 
-  ///HAMBURGER MENU
 
-    const menuIcon=document.querySelector("#menu-icon")
-    const openMenu=()=>{
-    // alert('opened')
-    const btnContainer = document.querySelector(".buttons-container") 
-    btnContainer.classList.toggle("mobile-menu")
+//HAMBURGER-MENU
+
+const menuIcon = document.querySelector("#menu-icon");
+const openMenu = () => {
+const btnContainer = document.querySelector(".right-header-btns");
+btnContainer.classList.toggle("mobile-menu");
 }
 
 menuIcon.onclick = openMenu;

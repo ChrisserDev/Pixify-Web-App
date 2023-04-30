@@ -117,10 +117,6 @@ submitBtn.addEventListener("click", (e) => {
     const name = document.querySelector('input[name="name"]').value;
     const title = document.querySelector('input[name="title"]').value;
     const imageURL1 = document.querySelector('input[name="imageURL1"]').value;
-    // const imageURL2 = document.querySelector('input[name="imageURL2"]').value;
-    // const imageURL3 = document.querySelector('input[name="imageURL3"]').value;
-    // const imageURL4 = document.querySelector('input[name="imageURL4"]').value;
-    // const imageURL5 = document.querySelector('input[name="imageURL5"]').value;
 
 // CODE TO RETURN THE NEW IMAGES THAT THE USER SUBMITTED
 
