@@ -139,10 +139,5 @@ submitBtn.addEventListener("click", (e) => {
     document.querySelector('input[name="name"]').value = "";
     document.querySelector('input[name="title"]').value = "";
     document.querySelector('input[name="imageURL1"]').value = "";
-    
-   
+  
 });
-
-
-
-

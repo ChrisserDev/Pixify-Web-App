@@ -26,6 +26,33 @@ body{
     display: none;
 }
 
+/* DARK/LIGHT MODE SWITCH */
+
+.toggle-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #007aa5;
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    left: 92%;
+}
+
+.toggle-btn img{
+    width: 25px;
+    margin-left: 10px;
+}
+
+.dark-theme{
+    background-color: #2A3B49;
+    color: #fff;
+}
+
 /* THE HEADER */
 
 header {
@@ -87,36 +114,7 @@ header {
     height: 100px;
     left: 72%;
     top: 88%;
-
 }
-
-/* DARK/LIGHT MODE SWITCH */
-
-.toggle-btn{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #007aa5;
-    color: white;
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 2%;
-    left: 92%;
-}
-
-.toggle-btn img{
-    width: 25px;
-    margin-left: 10px;
-}
-
-.dark-theme{
-    background-color: #2A3B49;
-    color: #fff;
-}
-
 
 /* //SUBMISSIONS PAGE - IMAGES */
 

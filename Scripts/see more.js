@@ -68,6 +68,16 @@ const imageSets = [
     }
   
   }
+
+  //HAMBURGER-MENU
+
+  const menuIcon = document.querySelector("#menu-icon");
+  const openMenu = () => {
+  const btnContainer = document.querySelector(".right-header-btns");
+  btnContainer.classList.toggle("mobile-menu");
+}
+
+menuIcon.onclick = openMenu;
   
   //FILTER THROUGH THE ARRAY
 
@@ -122,16 +132,3 @@ function displayImage(imageIndex) {
   displayImage(crntImage);
 
 });
-
-
-//HAMBURGER-MENU
-
-const menuIcon = document.querySelector("#menu-icon");
-const openMenu = () => {
-const btnContainer = document.querySelector(".right-header-btns");
-btnContainer.classList.toggle("mobile-menu");
-}
-
-menuIcon.onclick = openMenu;
-
-
