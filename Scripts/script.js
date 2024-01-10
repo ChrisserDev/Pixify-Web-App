@@ -10,7 +10,7 @@ hamburgerMenu();
 const displayCards=(dataSet)=> {
    const cardsContainer = document.getElementById("cards-container");
    const allCards = dataSet.map(item=> {
-   return `<a class="cards" href="see more.html?id=${item.id}">
+   return `<a class="cards" href="see-more.html?id=${item.id}">
              <img src=${item.images} alt=${item.name} class="cards-image" />
              <div class="cards-info">
                 <p>${item.name}</p>
@@ -40,15 +40,18 @@ submitBtn.addEventListener("click", (e) => {
     const name = document.querySelector('input[name="name"]').value;
     const title = document.querySelector('input[name="title"]').value;
     const imageURL1 = document.querySelector('input[name="imageURL1"]').value;
+    const imageURL2 = document.querySelector('input[name="imageURL2"]').value;
+
 
 // CODE TO RETURN THE NEW IMAGES THAT THE USER SUBMITTED
 
     const newImage = document.createElement('div');
 
     newImage.innerHTML = 
-      `<img src=${imageURL1} alt= ${name} class="cards-image" />
+      `<a class="cards" href="see-more.html?id=${imageURL1}&name=${name}&title=${title}">
+      <img src=${imageURL1} alt= ${name} class="cards-image" />
       <div class="cards-info">
-        <p>${name}</p>
+        <p id="detail-name">${name}</p>
         <p>${title}</p>
       </div>
         <span id="see-more-btn">see more</span>
@@ -57,10 +60,14 @@ submitBtn.addEventListener("click", (e) => {
     const cardContainer = document.querySelector("#cards-container");
     cardContainer.insertBefore(newImage, cardContainer.firstChild);
 
+  // SAVE imageURL2 IN LOCAL STORAGE
+  localStorage.setItem("imageURL2", imageURL2);
+
 // RESET FORM INPUTS
     
     document.querySelector('input[name="name"]').value = "";
     document.querySelector('input[name="title"]').value = "";
     document.querySelector('input[name="imageURL1"]').value = "";
-  
+    document.querySelector('input[name="imageURL2"]').value = "";
+
 });
