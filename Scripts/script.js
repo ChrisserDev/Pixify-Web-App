@@ -23,6 +23,7 @@ const displayCards=(dataSet)=> {
     cardsContainer.innerHTML= allCards.join("");
  }
  
+ 
  window.onload = function() {
    displayCards(imageSets);
  };
@@ -30,23 +31,28 @@ const displayCards=(dataSet)=> {
 // ADD NEW IMAGES USING THE FORM
 
 const submitBtn = document.querySelector("#submit-btn3");
-
 submitBtn.addEventListener("click", (e) => {
 //PREVENT THE FORM'S DEFAULT FUNCTION
-    e.preventDefault();
+  e.preventDefault();
 
 //GET THE VALUES FROM THE FORM
+  let name = document.querySelector('input[name="name"]').value;
+  let title = document.querySelector('input[name="title"]').value;
+  let imageURL1 = document.querySelector('input[name="imageURL1"]').value;
+  let imageURL2 = document.querySelector('input[name="imageURL2"]').value;
+  let imageURL3 = document.querySelector('input[name="imageURL3"]').value;
+  let imageURL4 = document.querySelector('input[name="imageURL4"]').value;
+  let imageURL5 = document.querySelector('input[name="imageURL5"]').value;
 
-    const name = document.querySelector('input[name="name"]').value;
-    const title = document.querySelector('input[name="title"]').value;
-    const imageURL1 = document.querySelector('input[name="imageURL1"]').value;
-    const imageURL2 = document.querySelector('input[name="imageURL2"]').value;
+// Create an array with the image URLs
+  let imageUrlsArray = [imageURL1, imageURL2, imageURL3, imageURL4, imageURL5];
+    
+  // Convert the array to a string and save it to localStorage
+  localStorage.setItem("imageUrlsArray", JSON.stringify(imageUrlsArray));
 
-
-// CODE TO RETURN THE NEW IMAGES THAT THE USER SUBMITTED
+// CODE TO RETURN THE FIRST IMAGE THAT THE USER SUBMITTED WHICH APPEAR NEXT TO THE OTHER CARDS
 
     const newImage = document.createElement('div');
-
     newImage.innerHTML = 
       `<a class="cards" href="see-more.html?id=${imageURL1}&name=${name}&title=${title}">
       <img src=${imageURL1} alt= ${name} class="cards-image" />
@@ -60,14 +66,16 @@ submitBtn.addEventListener("click", (e) => {
     const cardContainer = document.querySelector("#cards-container");
     cardContainer.insertBefore(newImage, cardContainer.firstChild);
 
-  // SAVE imageURL2 IN LOCAL STORAGE
-  localStorage.setItem("imageURL2", imageURL2);
-
 // RESET FORM INPUTS
-    
-    document.querySelector('input[name="name"]').value = "";
-    document.querySelector('input[name="title"]').value = "";
-    document.querySelector('input[name="imageURL1"]').value = "";
-    document.querySelector('input[name="imageURL2"]').value = "";
-
+    resetValue();
 });
+
+function resetValue(){
+  document.querySelector('input[name="name"]').value="";
+  document.querySelector('input[name="title"]').value="";
+  document.querySelector('input[name="imageURL1"]').value="";
+  document.querySelector('input[name="imageURL2"]').value="";
+  document.querySelector('input[name="imageURL3"]').value="";
+  document.querySelector('input[name="imageURL4"]').value="";
+  document.querySelector('input[name="imageURL5"]').value="";
+}

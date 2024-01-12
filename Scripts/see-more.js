@@ -1,135 +1,114 @@
-// import { imageSets } from "./data.js";
-// import { darkLightMode } from "./hamburger-menu.js";
-// import { hamburgerMenu } from "./hamburger-menu.js";
+//Importing Modules
 
-// darkLightMode();
-// hamburgerMenu();
-
-//   //FILTER THROUGH THE ARRAY
-
-//   let currentId;
-//   let currentImage;
-//   let currentImageNew;
-//   let currentName;
-//   let currentTitle;
-//   let currentImageIndex;
-
-
-//   window.onload = function () {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     currentId = urlParams.get("id");
-//     currentName = urlParams.get("name");
-//     currentTitle = urlParams.get("title");
-
-//     const currentSet = imageSets.find(item => item.id == currentId);
-//     currentImageIndex = currentSet.images.indexOf(currentSet.images.find(img => img.id == currentId));
-  
-
-//     // currentImage = imageSets.filter(item => item.id == currentId)[0];
-//     // displayImage(crntImage);
-//     displayImage2(currentSet, currentImageIndex);
-
-//   }
-
-//   //PREVIOUS/NEXT BUTTONS FUNCTIONS
-
-//   const firstImage = 0;
-//   const lastImage = imageSets[0].images.length -1;
-//   let crntImage = 0;
-
-//   function displayImage2(imageSet, imageIndex) {
-//     const image2 = `<div class="current-image">
-//       <div class="current-image-info">
-//           <h1>${currentTitle}</h1>
-//           <h2 class="current-image-name">${currentName}</h2>
-//           <img src="${imageSet.images[imageIndex].src}">
-//           </div>
-//           </div>`;
-
-//     const imageContainer = document.querySelector(".imageHolder");
-//     imageContainer.innerHTML = image2;
-
-// }
-
-// // function displayImage(imageIndex) {
-// //   const image = `<div class="current-image">
-// //   <div class="current-image-info">
-// //      <h1>${currentImage.title}</h1>
-// //      <h2 class="current-image-name">${currentImage.name}</h2>
-// //      </div>
-// //      <img src=${currentImage.images[imageIndex]} alt=${currentImage.name} class="current-new-image" />
-// //      <p id="images-number">${imageIndex + 1} of 5</p>
-// //      </div>`;
- 
-// //    const imageContainer = document.querySelector(".imageHolder");
-// //    imageContainer.innerHTML = image;
-// // }
-
-//   const nextBtn =  document.getElementById("next-btn");
-//   nextBtn.addEventListener("click", () => {
-//     crntImage++;
-//     if (crntImage  >= lastImage){
-//       crntImage = 4;
-// }
-//     // displayImage(crntImage);
-//     displayImage2(currentImageNew);
-// });
-
-//   const prevBtn = document.getElementById('prv-btn')
-//   prevBtn.addEventListener("click", () => {
-//     crntImage--;
-//     if (crntImage  <= firstImage){
-//       crntImage = 0;
-// }
-//   // displayImage(crntImage);
-//   displayImage2(currentImageNew);
-// });
-
+import { imageSets } from "./data.js";
 import { darkLightMode } from "./hamburger-menu.js";
 import { hamburgerMenu } from "./hamburger-menu.js";
+
+//Calling the dark mode function and the humburger menu.
 
 darkLightMode();
 hamburgerMenu();
 
+
+//Initializing Variables
+
 let currentId;
 let currentName;
 let currentTitle;
-let currentImageURL2;
 
+let imageArrayfromLocalStorage = JSON.parse(localStorage.getItem("imageUrlsArray")) || [];
+let currentIndex = 0;
+
+//Window Load Event
 window.onload = function () {
   const urlParams = new URLSearchParams(window.location.search);
   currentId = urlParams.get("id");
   currentName = urlParams.get("name");
   currentTitle = urlParams.get("title");
 
-  currentImageURL2 = localStorage.getItem("imageURL2");
+  // These two lines ensure that currentIndex is set to the index of the currentId in the array, or if it's not found (currentIndex is -1), it defaults to 0 representing the first image in the array.
+  currentIndex = imageArrayfromLocalStorage.indexOf(currentId);
+  currentIndex = currentIndex !== -1 ? currentIndex : 0;
 
-  displayImage(currentId);
+  // Check if the currentId exists in imageSets
+  const imageSetIndex = imageSets.findIndex(item => item.id == currentId);
+
+  // Display the initially provided image URL or from imageSets
+  if (imageSetIndex !== -1) {
+    displayImageSet(imageSetIndex, currentIndex);
+  } else {
+    displayImage(currentIndex);
+  }
 }
 
+//Next Button Click Event
 const nextBtn = document.getElementById("next-btn");
-const prevBtn = document.getElementById('prv-btn');
 nextBtn.addEventListener("click", () => {
-  // Assume currentId is a single string, not an array
-  // If it's an array, you might need to handle it differently
-  displayImage(currentImageURL2);
+  currentIndex++;
+  const imageSetIndex = imageSets.findIndex(item => item.id == currentId);
+
+  if (imageSetIndex !== -1) {
+    if (currentIndex >= imageSets[imageSetIndex].images.length) {
+      currentIndex = 0;
+    }
+    displayImageSet(imageSetIndex, currentIndex);
+  } else {
+    if (currentIndex >= imageArrayfromLocalStorage.length) {
+      currentIndex = 0;
+    }
+    displayImage(currentIndex);
+  }
 });
 
+// Previous Button Click Event
+const prevBtn = document.getElementById('prv-btn')
 prevBtn.addEventListener("click", () => {
-  // Assume currentId is a single string, not an array
-  // If it's an array, you might need to handle it differently
-  displayImage(currentId);
+  currentIndex--;
+  const imageSetIndex = imageSets.findIndex(item => item.id == currentId);
+
+  if (imageSetIndex !== -1) {
+    if (currentIndex < 0) {
+      currentIndex = imageSets[imageSetIndex].images.length - 1;
+    }
+    displayImageSet(imageSetIndex, currentIndex);
+  } else {
+    if (currentIndex < 0) {
+      currentIndex = imageArrayfromLocalStorage.length - 1;
+    }
+    displayImage(currentIndex);
+  }
 });
 
-function displayImage(imageUrl) {
+//Display Image Function based on the results from imageArrayfromLocalStorage array.
+function displayImage(index) {
+  const imageUrl = imageArrayfromLocalStorage[index];
+
   const image2 = `<div class="current-image">
     <div class="current-image-info">
       <h1>${currentTitle}</h1>
       <h2 class="current-image-name">${currentName}</h2>
       <img src="${imageUrl}">
+      <p id="images-number">${index + 1} of ${imageArrayfromLocalStorage.length}</p>
     </div>
   </div>`;
 
   const imageContainer = document.querySelector(".imageHolder");
   imageContainer.innerHTML = image2;
+}
+
+//Display Image Function based on the results from data.js array.
+function displayImageSet(imageSetIndex, index) {
+  const currentImageSet = imageSets[imageSetIndex];
+
+  const imageSet2 = `<div class="current-image">
+    <div class="current-image-info">
+      <h1>${currentImageSet.title}</h1>
+      <h2 class="current-image-name">${currentImageSet.name}</h2>
+      <img src="${currentImageSet.images[index]}">
+      <p id="images-number">${index + 1} of ${currentImageSet.images.length}</p>
+    </div>
+  </div>`;
+
+  const imageContainer = document.querySelector(".imageHolder");
+  imageContainer.innerHTML = imageSet2;
 }
