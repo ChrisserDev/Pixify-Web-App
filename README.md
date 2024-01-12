@@ -101,36 +101,68 @@ This code represents a website for a photography contest platform called Pixify.
 
   images: An array containing URLs of individual images in the set.
 
+### Script.js 
+
+  #### Displaying Images:
+
+  The displayCards function dynamically generates HTML for each card based on the dataSet and inserts it into the "cards-container" element. The window.onload event triggers the display of cards using the imageSets data.   Uses imageSets as the initial dataSet.
+
+  ![displaycards](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/30c43742-28d1-4fe0-8ccb-0662e71b924b)
+
+  ![resetValues](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/4451ea05-b010-4195-92b6-a1382ab03036)
+ 
+   #### Form Submission:
+ 
+  The code prevents the default form submission, retrieves values from form inputs, creates an array of image URLs, saves it to localStorage, creates a new card HTML for the first submitted image, inserts it at the beginning, and resets the form inputs.
+
+  This code sets up a webpage to display cards with images, allows users to submit new images through a form, and dynamically updates the display with the submitted images.
+
+  ![form submit logic](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/20e70604-6403-477a-8995-3d092b580b40)
+
  ### See-more.js
  
   #### Importing Modules
 
-  This section imports necessary modules and data. It imports imageSets from the data.js file and functions related to the hamburger menu from hamburger-menu.js. Here, functions for dark/light mode and hamburger menu are called. 
+  This section imports necessary modules and data. It imports imageSets from the data.js file and functions related to the hamburger menu from hamburger-menu.js. Here, functions for dark/light mode and hamburger menu are called.
+
+  ![import modules (see-more)](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/512a7a28-e4ab-4ad5-95bc-0218574d8e86)
  
   #### Initializing Variables
  
    Variables for the current image ID, name, and title are declared. imageArrayfromLocalStorage is initialized with the array stored in the local storage or an empty array if it doesn't exist. currentIndex is set to 0 initially.
+
+   ![initializingvariables(see-more)](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/bf0b0c48-4725-4fe0-9a10-56a1f666ddab)
  
   #### Window Load Event
   
   When the window loads, it retrieves parameters from the URL (assuming it's passed in the URL). It finds the initial index of the current image in imageArrayfromLocalStorage and checks if the currentId exists in imageSets. If it does, it calls displayImageSet,    
   otherwise it calls displayImage.
+
+  ![windowOnload(see-more)](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/d3c5032c-259a-463f-a857-dc8c2f7ffed8)
  
   #### Next Button Click Event
 
   This section handles the click event for the next button. It increments currentIndex and checks if it's beyond the length of images in either imageArrayfromLocalStorage or imageSets. If it is, it resets the index to 0 and then calls the appropriate display function.
+
+  ![nextfunction](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/12d84afe-0eb1-4405-9e2d-1bb4697492ea)
  
   #### Previous Button Click Event
 
   This section handles the click event for the previous button. It decrements currentIndex and checks if it's below 0. If it is, it resets the index to the last image in either imageArrayfromLocalStorage or imageSets and then calls the appropriate display function.
- 
+
+  ![prevFunction](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/b736ba51-a7b5-40a8-b77f-beeae25f4c38)
+
   #### Display Image Function
   
   This function displays the image using the URL from imageArrayfromLocalStorage. It creates an HTML structure and sets it in the element with the class "imageHolder".
+
+  ![DisplayLocalStorageImages](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/f1ce46be-f649-4162-8bf6-608ac607feaf)
  
   #### Display ImageSet Function
 
   This function displays the image using the URL from imageSets. It creates an HTML structure and sets it in the element with the class "imageHolder".
+
+  ![displayimageset](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/c7277eda-afba-4bb7-bc15-68d5ad9e0707)
  
  ### Dark/Light Mode:
  
@@ -141,6 +173,8 @@ This code represents a website for a photography contest platform called Pixify.
   Toggle Class: It toggles the "dark-theme" class on the document.body element, which is likely used to apply specific styles for dark mode.
 
   Button Text and Icon: Depending on the presence of the "dark-theme" class, it changes the text and source of the button's text and icon to indicate whether it's currently in light or dark mode.
+
+  ![darkLightMode](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/7d264dfc-13fb-4692-b504-7c13db01034f)
  
   ### Hamburger Menu:
 
@@ -151,15 +185,5 @@ This code represents a website for a photography contest platform called Pixify.
   Toggle Class: When the "menu-icon" is clicked, it toggles the "mobile-menu" class on the element with the class "right-header-btns." This class likely controls the appearance or behavior of the mobile menu.
 
   Event Handling: It assigns the openMenu function to the onclick event of the "menu-icon," meaning the menu will open or close when the icon is clicked.
- 
-### Script.js 
 
-  #### Displaying Images:
-
-  The displayCards function dynamically generates HTML for each card based on the dataSet and inserts it into the "cards-container" element. The window.onload event triggers the display of cards using the imageSets data.   Uses imageSets as the initial dataSet.
- 
-   #### Form Submission:
- 
-  The code prevents the default form submission, retrieves values from form inputs, creates an array of image URLs, saves it to localStorage, creates a new card HTML for the first submitted image, inserts it at the beginning, and resets the form inputs.
-
-  This code sets up a webpage to display cards with images, allows users to submit new images through a form, and dynamically updates the display with the submitted images.
+  ![hamburgermenufunction](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/40d46fa9-927e-48f1-8bc8-7ea48be4d130)
