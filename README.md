@@ -1,6 +1,6 @@
 # Pixify Web App
 
-pixifycontest.netlify.app
+https://pixifycontest.netlify.app/
 
 ## Quick Overview:
 
