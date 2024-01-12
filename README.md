@@ -1,5 +1,7 @@
 # Pixify Web App
 
+pixifycontest.netlify.app
+
 ## Quick Overview:
 
 This code represents a website for a photography contest platform called Pixify. Users can explore submissions, read about Pixify, and submit their own work through a form. The website incorporates styling, dynamic content loading, and user interaction features.
