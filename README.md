@@ -108,8 +108,6 @@ This code represents a website for a photography contest platform called Pixify.
   The displayCards function dynamically generates HTML for each card based on the dataSet and inserts it into the "cards-container" element. The window.onload event triggers the display of cards using the imageSets data.   Uses imageSets as the initial dataSet.
 
   ![displaycards](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/30c43742-28d1-4fe0-8ccb-0662e71b924b)
-
-  ![resetValues](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/4451ea05-b010-4195-92b6-a1382ab03036)
  
    #### Form Submission:
  
@@ -118,6 +116,8 @@ This code represents a website for a photography contest platform called Pixify.
   This code sets up a webpage to display cards with images, allows users to submit new images through a form, and dynamically updates the display with the submitted images.
 
   ![form submit logic](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/20e70604-6403-477a-8995-3d092b580b40)
+
+  ![resetValues](https://github.com/ChrisserDev/Pixify-Web-App/assets/126911205/4451ea05-b010-4195-92b6-a1382ab03036)
 
  ### See-more.js
  
