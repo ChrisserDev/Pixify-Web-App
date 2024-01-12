@@ -89,7 +89,7 @@ header {
 .paragraph-container {
     position: absolute;
     background: #2A3B49;
-    border-radius: 150px 150px 150px 0px;
+    border-radius: 150px 150px 150px 0;
     padding: 2.6em;
     width: 44%;
     top: 56%;
@@ -135,7 +135,7 @@ header {
     border-radius: 4px;
     width: 1120px;
     height: 582px;
-    box-shadow: 0px 2px 5px -3px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 5px -3px rgba(0,0,0,0.5);
 }
 
 #images-number{
@@ -517,13 +517,5 @@ body.dark-theme #see-more-btn {
 
     #see-more-btn{
         width: 190px;
-    }
-}
-
-/* LAYOUT FOR SCREENS BIGGER THAN 1440PX */
-
-@media (min-width: 1440px){
-    .paragraph-container{
-        top: 67%;
     }
 }
