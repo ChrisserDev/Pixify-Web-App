@@ -1,3 +1,5 @@
+/* DEFAULT STYLING */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +8,6 @@
 
 h1, h2, h3, p, a {
     font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
 }
 
 a {
@@ -16,9 +16,9 @@ a {
 }
 
 body{
-    transition: background 0.8s, color 0.8s;
+    transition: background 1s ease-in-out, color 1s ease-in-out;
+    overflow-x: hidden;
 }
-
 
 /* HAMBURGER MENU */
 
@@ -44,8 +44,8 @@ body{
 }
 
 .toggle-btn img{
-    width: 25px;
-    margin-left: 10px;
+    width: 18px;
+    margin-left: 0.6em;
 }
 
 .dark-theme{
@@ -58,14 +58,14 @@ body{
 header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 0 1.25em;
     background-color: #2A3B49;
 }
 
 #logo-text {
     color: #fff;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2em;
 }
 
 .right-header-btns {
@@ -83,45 +83,90 @@ header {
 
 .home-page img {
     width: 100%;
+    height: 93vh;
 }
 
 .paragraph-container {
     position: absolute;
     background: #2A3B49;
     border-radius: 150px 150px 150px 0px;
-    padding: 58px 20px;
+    padding: 2.6em;
     width: 44%;
     top: 56%;
 }
 
 .paragraph-container p {
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 1.5rem;
+    line-height: 1.4em;
     text-align: center;
     color: white;
 }
 
-#submit-button {
-    position: absolute;
-    text-align: center;
-    border: 2px solid #7BFFE9;
-    color: #7BFFE9;
-    font-size: 33px;
-    border-radius: 60px;
-    background-color: transparent;
-    width: 400px;
-    height: 100px;
-    left: 72%;
-    top: 88%;
+/* SUBMISSIONS PAGE - IMAGES */
+
+
+/* MAIN CONTENT */
+
+.current-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* //SUBMISSIONS PAGE - IMAGES */
+.current-image-name {
+    margin: .5em 0;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: lighter;
+}
+
+.current-image-info h1{
+    font-size: 2.25rem;
+    line-height: 2.75em;
+   
+}
+
+.current-image-info{
+    padding: 0 0 1em 0;
+    text-align: center;
+}
+
+.current-image img {
+    border-radius: 4px;
+    width: 1120px;
+    height: 582px;
+    box-shadow: 0px 2px 5px -3px rgba(0,0,0,0.5);
+}
+
+#images-number{
+    font-size: 1.4rem;
+    margin-top: 1em;
+}
+
+/* PREVIOUS/NEXT BUTTONS */
+
+.sliderImages {
+    text-align: center;
+    margin: 0 1.9em 5.6em 0;
+}
+
+#prv-btn, #next-btn {
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.5em;
+    background-color: #2A3B49;
+    color: #7BFFE9;
+    padding: 0.3em 1.25em;
+    border-radius: 12px;
+    border: 1px solid grey;
+    margin: 0 1.25em;
+}
+
 
 .main-container {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    margin: 3em 0;
 }
 
 .submissions {
@@ -130,25 +175,27 @@ header {
 
 .submissions h1 {
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 1em;
+    font-weight: bold;
 }
 
 #cards-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    padding: 0 20px;
+    padding: 0 1.25em;
 }
 
 .cards-image {
     border-radius: 8px;
-    width: 100%;
+    width: 500px;
+    height: 300px;
 }
 
 .cards-info{
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 0.3em;
     color:white;
     background-color: rgb(53, 50, 50);
 }
@@ -158,9 +205,13 @@ header {
     border: none;
     cursor: pointer;
     float: right;
-    font-size: 12px;
+    font-size: 1rem;
     color: black;
 }
+
+body.dark-theme #see-more-btn {
+    color: white;
+  }
 
 /* SUBMISSIONS PAGE - FORM  */
 
@@ -170,22 +221,22 @@ header {
     align-items: center;
     background: #2A3B49;
     border-radius: 8px;
-    padding: 20px;
-    width: 30%;
+    padding: 1em;
+    width: 28%;
     height: 80%;
-    margin-top: 6.1%;
+    margin: 4.4em 2em 0 2em;
     color: white;
 }
 
 #form-container input{
     border-radius: 8px;
     border: 1px solid gray;
-    padding: 8px 16px;
+    padding: 0.5em 1em;
     width: 100%;
 }
 
 .input-container {
-    margin-top: 20px;
+    margin-top: 1.25em;
     width: 100%;
     text-align: center;
     
@@ -195,10 +246,10 @@ header {
     border: 2px solid #7BFFE9;
     background-color: transparent;
     color: #7BFFE9;
-    font-size: 20px;
-    padding: 10px 50px;
+    font-size: 1.25rem;
+    padding: 0.6em 3.1em;
     border-radius: 20px;
-    margin-top: 40px;
+    margin-top: 2.5em;
     cursor: pointer;
 }
 
@@ -206,47 +257,39 @@ header {
 
 .main-page h1 {
     text-align: center;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 44px;
-    padding: 30px 0;
+    font-size: 2.25rem;
+    padding: 1em 0;
 }
 
 #welcome-text {
     text-align: center;
     padding: 10px 50px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1.25rem;
+    line-height: 1.5em;
 }
 
 
 .left-side-text p {
-    font-size: 20px;
-    line-height: 24px;
-    padding-bottom: 40px;
-}
-
-
-#deadline-text {
-    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    padding-bottom: 2.5em;
 }
 
 #submit-button2 {
-    width: 400px;
-    height: 100px;
-    font-size: 30px;
+    padding: .5em 2em;
+    font-size: 1.5rem;
     text-align: center;
     background: #2A3B49;
     border: 2px solid #7BFFE9;
     color: #7BFFE9;
-    border-radius: 60px;
-    margin-top: 30px;
+    border-radius: 50px;
+    margin-top: 1.9rem;
     cursor: pointer;
 }
 
 .text-image-container {
     display: flex;
-    margin: 70px 55px;
+    margin: 4.4em 3.4em;
     gap: 50px;
 }
 
@@ -254,7 +297,9 @@ header {
   border-radius: 10px;
 }
 
-/* MOBILE-LAYOUT */
+/* SEE MORE IMAGES PAGE */
+
+/* TABLET-LAYOUT */
 
 @media (max-width: 768px){
 
@@ -262,7 +307,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 15px 20px;
+        padding: 1em 1.25em;
         background-color: #2A3B49;
     }
 
@@ -279,18 +324,24 @@ header {
     #menu-icon {
         display: flex;
         flex-direction: row-reverse;
-        font-size: 30px;
+        font-size: 1.9rem;
         color: white;
         cursor: pointer;
-        margin-bottom: 10px;
-    }
+        margin-bottom: 0.6em;
+    } 
+
+    .current-image img{
+        width: 90%;
+        height: 90%;
+     }
 
     .main-container {
         flex-direction: column-reverse;
+        margin: 0;
     }
 
     .submissions{
-        margin-top: 40px;
+        margin-top: 2.5em;
         width: 100%;
     }
 
@@ -298,9 +349,15 @@ header {
         width: 100%;
     }
 
+    .cards-image{
+        width: 345px;
+        height: 250px;
+    }
+
     #form-container{
-        width: 100%;
+        width: 80%;
         align-self: center;
+        margin: 2.4em 2em 0 2em;
     }
 
     .input-container input{
@@ -329,7 +386,7 @@ header {
 
     #submit-button2 {
         width: 40%;
-        margin: 0 190px;
+        margin: 0 8em;
         height: 60px;
     }
 
@@ -337,7 +394,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 30px 20px;
+        padding: 1.9em 1.25em;
         gap: 35px;
         width: 97%;
     }
@@ -346,30 +403,27 @@ header {
         position: absolute;
         background: #2A3B49;
         border-radius: 120px 120px 120px 0px;
-        padding: 15px 35px;
+        padding: 1em 2em;
         width: 60%;
         top: 67%;
     }
 
     .paragraph-container p {
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 1.1rem;
+        line-height: 1.25em;
         text-align: center;
         color: white;
         
     }
 
-    #submit-button {
-        width: 180px;
-        height: 50px;
-        left: 68%;
-        top: 87%;
-        font-size: 22px;
+    .home-page{
+        margin: 0;
     }
 
     .home-page img{
-        width: 768px;
-        height: 650px;
+        width: 100%;
+        height: 100vh;
+
     }
 
     .mobile-menu button {
@@ -385,5 +439,91 @@ header {
     .toggle-btn{
         top: 3%;
         left: 85%;
+    }
+}
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 426px){
+
+    .toggle-btn{
+        top: 20px;
+        left: 325px;
+        height: 35px;
+        width: 85px;
+    }
+
+    .toggle-btn img{
+        width: 18%;
+    }
+
+    #logo-text{
+        line-height: 1.2em;
+    }
+
+    #cards-container{
+        grid-template-columns: 1fr;
+    }
+
+    .cards-image{
+        width: 385px;
+    }
+
+    .paragraph-container{
+        top: 645px;
+        width: 80%;
+        padding: 1em 2em;
+    }
+
+    .paragraph-container p{
+        font-size: .8em;
+    }
+
+    .main-page img{
+        width: 100%;
+    }
+
+    .text-image-container{
+        margin: 3em 1.5em;
+    }
+
+    #submit-button2{
+        font-size: 1em;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* LAYOUT FOR SCREENS BIGGER THAN 1024PX */
+
+@media (min-width: 1024px){
+
+    .paragraph-container{
+        top: 47%;
+    }
+
+    .right-header-btns{
+        width: 23%;
+        gap: 20px;
+    }
+
+    #submit-button2{
+        font-size: 1.5rem;
+    }
+
+    .cards-info{
+        width: 500px;
+    }
+
+    #see-more-btn{
+        width: 190px;
+    }
+}
+
+/* LAYOUT FOR SCREENS BIGGER THAN 1440PX */
+
+@media (min-width: 1440px){
+    .paragraph-container{
+        top: 67%;
     }
 }
