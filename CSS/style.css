@@ -215,7 +215,7 @@ body.dark-theme #see-more-btn {
 
 /* SUBMISSIONS PAGE - FORM  */
 
-#form-container{
+form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +228,7 @@ body.dark-theme #see-more-btn {
     color: white;
 }
 
-#form-container input{
+form input{
     border-radius: 8px;
     border: 1px solid gray;
     padding: 0.5em 1em;
@@ -354,7 +354,7 @@ body.dark-theme #see-more-btn {
         height: 250px;
     }
 
-    #form-container{
+    form{
         width: 80%;
         align-self: center;
         margin: 2.4em 2em 0 2em;
