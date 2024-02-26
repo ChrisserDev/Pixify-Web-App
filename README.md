@@ -22,7 +22,7 @@ The project prioritizes responsiveness, ensuring a smooth and visually appealing
 
 ### Dynamic Image Display:
 
-The project dynamically displays images associated with different photographers. Users can navigate through image sets, indicating a dynamic and interactive presentation of visual content.
+The project dynamically displays images associated with different photographers. Users can navigate through images, indicating a dynamic and interactive presentation of visual content.
 
 ### Local Storage Usage:
 
@@ -42,4 +42,3 @@ Global styles, specific page styles, and responsive design principles are applie
 ### Structured HTML:
 
 HTML files are structured to include header sections, navigation bars, toggle buttons, and main content sections. This organization contributes to clarity in code structure and maintenance.
-JavaScript for Data Handling:
