@@ -1,6 +1,5 @@
 import { imageSets } from "./data.js";
-import { darkLightMode } from "./hamburger-menu.js";
-import { hamburgerMenu } from "./hamburger-menu.js";
+import { darkLightMode, hamburgerMenu } from "./hamburger-menu.js";
 
 darkLightMode();
 hamburgerMenu();
@@ -44,14 +43,13 @@ submitBtn.addEventListener("click", (e) => {
   let imageURL4 = document.querySelector('input[name="imageURL4"]').value;
   let imageURL5 = document.querySelector('input[name="imageURL5"]').value;
 
-// Create an array with the image URLs
+//Create an array with the image URLs
   let imageUrlsArray = [imageURL1, imageURL2, imageURL3, imageURL4, imageURL5];
     
-  // Convert the array to a string and save it to localStorage
+//Convert the array to a string and save it to localStorage
   localStorage.setItem("imageUrlsArray", JSON.stringify(imageUrlsArray));
 
-// CODE TO RETURN THE FIRST IMAGE THAT THE USER SUBMITTED WHICH APPEAR NEXT TO THE OTHER CARDS
-
+//CODE TO RETURN THE FIRST IMAGE THAT THE USER SUBMITTED WHICH APPEAR NEXT TO THE OTHER CARDS
     const newImage = document.createElement('div');
     newImage.innerHTML = 
       `<a class="cards" href="see-more.html?id=${imageURL1}&name=${name}&title=${title}">

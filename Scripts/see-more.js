@@ -1,17 +1,14 @@
 //Importing Modules
 
 import { imageSets } from "./data.js";
-import { darkLightMode } from "./hamburger-menu.js";
-import { hamburgerMenu } from "./hamburger-menu.js";
+import { darkLightMode, hamburgerMenu } from "./hamburger-menu.js";
 
 //Calling the dark mode function and the humburger menu.
-
 darkLightMode();
 hamburgerMenu();
 
 
 //Initializing Variables
-
 let currentId;
 let currentName;
 let currentTitle;
