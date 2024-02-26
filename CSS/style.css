@@ -1,5 +1,4 @@
 /* DEFAULT STYLING */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +17,7 @@ a {
 body{
     transition: background 1s ease-in-out, color 1s ease-in-out;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* HAMBURGER MENU */
@@ -35,11 +35,11 @@ body{
     background-color: #007aa5;
     color: white;
     width: 100px;
-    height: 40px;
+    height: 35px;
     border-radius: 20px;
     cursor: pointer;
     position: absolute;
-    top: 2%;
+    top: 3.2%;
     left: 92%;
 }
 
@@ -58,14 +58,16 @@ body{
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 1.25em;
     background-color: #2A3B49;
+    height: 81px;
 }
 
 #logo-text {
     color: #fff;
     font-size: 2.25rem;
-    line-height: 2em;
+    
 }
 
 .right-header-btns {
@@ -83,16 +85,17 @@ header {
 
 .home-page img {
     width: 100%;
-    height: 93vh;
+    max-height: 90vh;
+    overflow: hidden;
 }
 
 .paragraph-container {
     position: absolute;
     background: #2A3B49;
-    border-radius: 150px 150px 150px 0;
-    padding: 2.6em;
-    width: 44%;
-    top: 56%;
+    border-radius: 100px 100px 100px 0;
+    padding: 2em;
+    width: 48%;
+    top: 58%;
 }
 
 .paragraph-container p {
@@ -243,14 +246,17 @@ form input{
 }
 
 #submit-btn3{
-    border: 2px solid #7BFFE9;
-    background-color: transparent;
-    color: #7BFFE9;
+    background-color: #7BFFE9;
+    color: black;
     font-size: 1.25rem;
     padding: 0.6em 3.1em;
     border-radius: 20px;
     margin-top: 2.5em;
     cursor: pointer;
+}
+
+#submit-btn3:hover{
+    background-color: #5ec8b6;
 }
 
 /* ABOUT US PAGE*/
@@ -402,10 +408,10 @@ form input{
     .paragraph-container {
         position: absolute;
         background: #2A3B49;
-        border-radius: 120px 120px 120px 0px;
+        border-radius: 100px 100px 100px 0px;
         padding: 1em 2em;
         width: 60%;
-        top: 67%;
+        top: 61%;
     }
 
     .paragraph-container p {
@@ -437,7 +443,7 @@ form input{
     }
 
     .toggle-btn{
-        top: 3%;
+        top: 3.5%;
         left: 85%;
     }
 }
@@ -448,7 +454,7 @@ form input{
 
     .toggle-btn{
         top: 20px;
-        left: 325px;
+        left: 286px;
         height: 35px;
         width: 85px;
     }
@@ -465,12 +471,16 @@ form input{
         grid-template-columns: 1fr;
     }
 
-    .cards-image{
-        width: 385px;
+    .cards-image, .cards-info{
+        width: 350px;
+    }
+
+    #see-more-btn {
+        float: left;
     }
 
     .paragraph-container{
-        top: 645px;
+        top: 350px;
         width: 80%;
         padding: 1em 2em;
     }
@@ -492,6 +502,15 @@ form input{
         margin: 0;
         width: 100%;
     }
+
+    .submissions {
+        width: fit-content;
+    }
+
+    #cards-container {
+        padding: 0;
+        margin: 0 1em;
+    }
 }
 
 /* LAYOUT FOR SCREENS BIGGER THAN 1024PX */
@@ -499,7 +518,7 @@ form input{
 @media (min-width: 1024px){
 
     .paragraph-container{
-        top: 47%;
+        top: 54.5%;
     }
 
     .right-header-btns{
@@ -518,4 +537,5 @@ form input{
     #see-more-btn{
         width: 80px;
     }
+
 }
